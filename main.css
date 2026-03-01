@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+:root{
+    --main-color:#f44336
+}
+body{
+    background-color: #eee;
+}
+body>h1{
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 30px 100px; 
+    .disable{
+        opacity: .5;
+        pointer-events: none;
+    }
+    .guess-game{
+        .inputs{
+            margin-bottom: 20px;
+
+            >div{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                >span{
+                    margin-right: 10px;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+
+                input{
+                    width: 60px;
+                    height: 60px;
+                    margin: 5px;
+                    font-size: 50px;
+                    text-align: center;
+                    caret-color: var(--main-color);
+                    border: none;
+                    border-bottom: 3px solid black;
+                    outline-color: #ccc;
+                    background-color: white;
+                &.yes-in-place{
+                    background-color: #f89e13;
+                    border: #f89e13;
+                    color: white;                
+                }
+                &.yes-not-in-place{
+                    background-color: #18ba89;
+                    border: #18ba89;
+                    color: white;                
+                }
+                &.no{
+                    background-color: #27303f;
+                    border: #27303f;
+                    color: white;                
+                }
+                }
+
+            }
+
+        }
+        
+        .buttons{
+            display: flex;
+            gap: 10px;
+            button{
+                color: white;
+                border: 0;
+                padding: 10px 20px;
+                cursor: pointer;
+                font-size: 20px;
+                font-weight: bold;
+                border-radius: 5px;
+            }
+            .check{
+                background-color: #ff5333;
+                flex: 1;
+            }
+            .hints{
+                background-color: #008789;
+                width: fit-content;
+            }
+        }
+        .massage{
+            text-align: center;         
+            span{
+                font-size: 20px;
+                margin: 10px;
+                display: block;
+                font-weight: bold;
+            }
+            p{
+                background-color: var(--main-color);
+                width: fit-content;
+                padding: 10px 20px;
+                margin: 10px auto;
+                font-size: 24px;
+                font-weight: bold;
+                color: white;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+            }
+        }
+    }
+    .guess-rouls{
+        >h1{
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .key{
+            background-color: white;
+            padding: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .key-color{
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                &.orange{
+                background-color: #f89e13;
+            }
+                &.green{
+                background-color: #18ba89;
+            }
+                &.black{
+                background-color: #27303f;
+            }
+            }
+            .key-text{
+                font-weight: bold;
+            }
+        }
+    }
+}
+@media (max-width:767px) {
+    .container{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    input {
+    width: 30px;
+    height: 40px;
+    margin: 5px;
+    font-size: 30px;
+    }
+    .container{
+    .guess-game{
+        .inputs{
+            >div{
+                input{
+                    width: 30px;
+                    height: 40px;
+                    margin: 5px;
+                    font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+}
